@@ -46,6 +46,8 @@ export default {
   font-size: 12px;
   width: 100%;
   justify-content: space-around;
+  z-index: 666;
+  background: white;
   .tab_item {
     img {
       width: 30px;

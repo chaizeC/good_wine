@@ -1,3 +1,80 @@
-#home_wrapper{
-    color: red;
+#home_wrapper {
+    .header_wrapper {
+        padding   : 0 15px;
+        background: transparent;
+
+        .wine {
+            width : 30px;
+            height: 30px;
+        }
+
+        .logo {
+            background   : url(../../common/img/wine.png) no-repeat -7px -42px;
+            height       : 44px;
+            width        : 44px;
+            transform    : scale(0.75);
+            border-radius: 14px;
+            margin-left  : -5px;
+        }
+    }
+
+    .flex_box {
+        display        : flex;
+        flex-direction : column;
+        height         : 44px;
+        justify-content: center;
+    }
+
+    .swiper_wrapper {
+        margin-top: -44px;
+        box-shadow: none;
+        height    : 200px;
+    }
+
+    .cate_item {
+        position: relative;
+        z-index : 1;
+        height  : 78px;
+
+        >img {
+            width: 100%;
+        }
+
+        .cover_img {
+            position     : absolute;
+            z-index      : 666;
+            width        : 25px;
+            top          : 16px;
+            left         : 22px;
+            background   : #f73738;
+            border-radius: 50%;
+        }
+
+        .cover_text {
+            color   : #e4cec7;
+            position: absolute;
+            z-index : 666;
+            top     : 0;
+            left    : 0;
+            width   : 120px;
+        }
+
+    }
+
+    .mt {
+        margin-top: 2px;
+    }
+
+    .main {
+        .headlines {
+
+            img {
+                width: 25px;
+            }
+        }
+
+    }
+
+
+
 }

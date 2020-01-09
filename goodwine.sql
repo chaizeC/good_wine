@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 03/01/2020 16:31:42
+ Date: 09/01/2020 17:32:33
 */
 
 SET NAMES utf8mb4;
@@ -79,7 +79,7 @@ CREATE TABLE `oms_order`  (
   `receive_time` datetime(0) NULL DEFAULT NULL COMMENT '确认收货时间',
   `comment_time` datetime(0) NULL DEFAULT NULL COMMENT '评价时间',
   PRIMARY KEY (`order_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of oms_order
@@ -105,6 +105,7 @@ INSERT INTO `oms_order` VALUES (43, 1, NULL, '411578031896825', '2020-01-03 14:1
 INSERT INTO `oms_order` VALUES (44, 1, NULL, '831578039970051', '2020-01-03 16:26:10', NULL, 9.00, NULL, 0, NULL, NULL, NULL, '341578039970051', NULL, NULL, NULL, NULL, NULL, 0, 2000, '2020-01-03 16:26:10', NULL, NULL, '2020-01-03 16:26:10');
 INSERT INTO `oms_order` VALUES (45, 1, NULL, '361578039976652', '2020-01-03 16:26:17', NULL, 9.00, NULL, 0, NULL, NULL, NULL, '341578039976652', NULL, NULL, NULL, NULL, NULL, 0, 2000, '2020-01-03 16:26:17', NULL, NULL, '2020-01-03 16:26:17');
 INSERT INTO `oms_order` VALUES (46, 1, NULL, '351578039981194', '2020-01-03 16:26:21', NULL, 9.00, NULL, 0, NULL, NULL, NULL, '341578039981194', NULL, NULL, NULL, NULL, NULL, 0, 2000, '2020-01-03 16:26:21', NULL, NULL, '2020-01-03 16:26:21');
+INSERT INTO `oms_order` VALUES (47, 1, NULL, '111578274380389', '2020-01-06 09:33:00', NULL, 9.00, NULL, 0, NULL, NULL, NULL, '341578274380389', NULL, NULL, NULL, NULL, NULL, 0, 2000, '2020-01-06 09:33:00', NULL, NULL, '2020-01-06 09:33:00');
 
 -- ----------------------------
 -- Table structure for oms_order_item
@@ -129,7 +130,7 @@ CREATE TABLE `oms_order_item`  (
   `real_amount` decimal(10, 2) NULL DEFAULT NULL COMMENT '该商品经过优惠后的分解金额',
   `gift_growth` int(11) NULL DEFAULT 0 COMMENT '赠送积分',
   PRIMARY KEY (`order_item_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 73 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单中所包含的商品' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 74 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '订单中所包含的商品' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of oms_order_item
@@ -175,6 +176,7 @@ INSERT INTO `oms_order_item` VALUES (69, 43, '411578031896825', 2, 'https://img0
 INSERT INTO `oms_order_item` VALUES (70, 44, '831578039970051', 30, 'https://img10.jiuxian.com/2018/1106/dce1464f3b3842d0973e63c77e6f27e12.jpg', '浓香型', NULL, NULL, 399.00, 9, NULL, '30', '', NULL, NULL, 391.02, 0);
 INSERT INTO `oms_order_item` VALUES (71, 45, '361578039976652', 30, 'https://img10.jiuxian.com/2018/1106/dce1464f3b3842d0973e63c77e6f27e12.jpg', '浓香型', NULL, NULL, 399.00, 5, NULL, '30', '', NULL, NULL, 391.02, 0);
 INSERT INTO `oms_order_item` VALUES (72, 46, '351578039981194', 30, 'https://img10.jiuxian.com/2018/1106/dce1464f3b3842d0973e63c77e6f27e12.jpg', '浓香型', NULL, NULL, 399.00, 5, NULL, '30', '', NULL, NULL, 391.02, 0);
+INSERT INTO `oms_order_item` VALUES (73, 47, '111578274380389', 30, 'https://img10.jiuxian.com/2018/1106/dce1464f3b3842d0973e63c77e6f27e12.jpg', '浓香型', NULL, NULL, 399.00, 5, NULL, '30', '', NULL, NULL, 391.02, 0);
 
 -- ----------------------------
 -- Table structure for pms_album_pic
@@ -185,7 +187,7 @@ CREATE TABLE `pms_album_pic`  (
   `product_id` bigint(20) NULL DEFAULT NULL,
   `pic` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`album_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 349 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '画册图片表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 399 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '画册图片表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of pms_album_pic
@@ -350,6 +352,56 @@ INSERT INTO `pms_album_pic` VALUES (345, 35, 'http://img10.jiuxian.com/bill/2016
 INSERT INTO `pms_album_pic` VALUES (346, 35, 'http://img10.jiuxian.com/bill/2016/1118/df8e812821594aef93c2d3d5f72ee2a1.jpg');
 INSERT INTO `pms_album_pic` VALUES (347, 35, 'http://img10.jiuxian.com/bill/2016/1118/e51f73c4e7014de2948f627885731e17.jpg');
 INSERT INTO `pms_album_pic` VALUES (348, 35, 'http://img10.jiuxian.com/bill/2016/1118/bbef3c9ba84e4fe288d9039d317387b0.jpg');
+INSERT INTO `pms_album_pic` VALUES (349, 36, 'http://img06.jiuxian.com/brandlogo/2019/1212/e894809b955c4442b4149f4414117277.jpg');
+INSERT INTO `pms_album_pic` VALUES (350, 36, 'http://img08.jiuxian.com/brandlogo/2019/1212/7f7cd504ce0c43eb8d9f74f7cec7fd0f.jpg');
+INSERT INTO `pms_album_pic` VALUES (351, 36, 'http://img09.jiuxian.com/brandlogo/2019/1212/3c57495caf144a0fb2f228ddbff4938b.jpg');
+INSERT INTO `pms_album_pic` VALUES (352, 36, 'http://img06.jiuxian.com/brandlogo/2019/1212/e7c3fc792fa9463a8bc9cd29948efdd6.jpg');
+INSERT INTO `pms_album_pic` VALUES (353, 36, 'http://img06.jiuxian.com/brandlogo/2019/1212/cafad772c9d94a5eb114eb8c2668ece4.jpg');
+INSERT INTO `pms_album_pic` VALUES (354, 37, 'http://img07.jiuxian.com/brandlogo/2019/1211/760c698c06ad484fb686c63bfe59be21.jpg');
+INSERT INTO `pms_album_pic` VALUES (355, 37, 'http://img09.jiuxian.com/brandlogo/2019/1211/dcd9d55274b64e889b273a204ab35808.jpg');
+INSERT INTO `pms_album_pic` VALUES (356, 37, 'http://img10.jiuxian.com/brandlogo/2019/1211/cec617a0d540404a954dbe781f9f13fa.jpg');
+INSERT INTO `pms_album_pic` VALUES (357, 37, 'http://img08.jiuxian.com/brandlogo/2019/1211/1ed503ef480a496a8042e2b34b611b88.jpg');
+INSERT INTO `pms_album_pic` VALUES (358, 37, 'http://img09.jiuxian.com/brandlogo/2019/1211/01b0b3716a1e4502938743a07aa1b650.jpg');
+INSERT INTO `pms_album_pic` VALUES (359, 37, 'http://img10.jiuxian.com/brandlogo/2019/1211/bd8fd8af548d4865a466f2384fd42302.jpg');
+INSERT INTO `pms_album_pic` VALUES (360, 37, 'http://img06.jiuxian.com/brandlogo/2019/1211/86a3e7cffbee42cca69321bf758a5034.jpg');
+INSERT INTO `pms_album_pic` VALUES (361, 37, 'http://img06.jiuxian.com/brandlogo/2019/1211/86a3e7cffbee42cca69321bf758a5034.jpg');
+INSERT INTO `pms_album_pic` VALUES (362, 38, 'http://img08.jiuxian.com/brandlogo/2019/0903/23a00841a7c04baf843808d295d5c92f.jpg');
+INSERT INTO `pms_album_pic` VALUES (363, 38, 'http://img07.jiuxian.com/brandlogo/2019/0903/9ca6afef784546849d28ae4e0ea8f38c.jpg');
+INSERT INTO `pms_album_pic` VALUES (364, 38, 'http://img10.jiuxian.com/brandlogo/2019/0903/3989b63523314a83847bbb7ea2bd308a.jpg');
+INSERT INTO `pms_album_pic` VALUES (365, 38, 'http://img10.jiuxian.com/brandlogo/2019/0903/d668dd16c4764d11af8210d9315ca15e.jpg');
+INSERT INTO `pms_album_pic` VALUES (366, 38, 'http://img09.jiuxian.com/brandlogo/2019/0903/3c85ef9ba4954c4daa6c73d1a973d039.jpg');
+INSERT INTO `pms_album_pic` VALUES (367, 38, 'http://img10.jiuxian.com/brandlogo/2019/0903/5d29ce71c2504b0081938b93e26c0901.jpg');
+INSERT INTO `pms_album_pic` VALUES (368, 38, 'http://img06.jiuxian.com/brandlogo/2019/0903/de5f43becfb74e20a7624ae35a2acd8d.jpg');
+INSERT INTO `pms_album_pic` VALUES (369, 39, 'http://img09.jiuxian.com/brandlogo/2019/0828/b2625f385d19427b88f3164148e8b5d0.jpg');
+INSERT INTO `pms_album_pic` VALUES (370, 39, 'http://img08.jiuxian.com/brandlogo/2019/0828/7ad4aa4caee141e295caf929ff182fcd.jpg');
+INSERT INTO `pms_album_pic` VALUES (371, 39, 'http://img10.jiuxian.com/brandlogo/2019/0828/7dfe9e178a0a442ab8649cb96ff1e7c1.jpg');
+INSERT INTO `pms_album_pic` VALUES (372, 39, 'http://img06.jiuxian.com/brandlogo/2019/0828/274da6eaa63f4cebbca13adf9d3feb15.jpg');
+INSERT INTO `pms_album_pic` VALUES (373, 39, 'http://img06.jiuxian.com/brandlogo/2019/0828/236747b4c80044cfb1066bc30fdd8709.jpg');
+INSERT INTO `pms_album_pic` VALUES (374, 39, 'http://img10.jiuxian.com/brandlogo/2019/0828/87d012d0ebe34f08820b487dfcfa4338.jpg');
+INSERT INTO `pms_album_pic` VALUES (375, 39, 'http://img08.jiuxian.com/brandlogo/2019/0828/e2ea93df80f94f10a168be62e7005a11.jpg');
+INSERT INTO `pms_album_pic` VALUES (376, 39, 'http://img10.jiuxian.com/brandlogo/2019/0828/c2b11da731ca4d45979e71f921dd6345.jpg');
+INSERT INTO `pms_album_pic` VALUES (377, 40, 'http://img06.jiuxian.com/brandlogo/2019/0425/756d7913aab5409da1d216d1f45b6fa2.jpg');
+INSERT INTO `pms_album_pic` VALUES (378, 40, 'http://img10.jiuxian.com/brandlogo/2019/0425/0549d43df6ea4cdda907919d3bf4ab9f.jpg');
+INSERT INTO `pms_album_pic` VALUES (379, 40, 'http://img10.jiuxian.com/brandlogo/2019/0425/be72605336904a15b6fc818785d76450.jpg');
+INSERT INTO `pms_album_pic` VALUES (380, 40, 'http://img07.jiuxian.com/brandlogo/2019/0425/6b16c7404f5a4554ab7aff4a6129666a.jpg');
+INSERT INTO `pms_album_pic` VALUES (381, 40, 'http://img07.jiuxian.com/brandlogo/2019/0425/10f2c09901b6417d9f95df42f5355279.jpg');
+INSERT INTO `pms_album_pic` VALUES (382, 40, 'http://img09.jiuxian.com/brandlogo/2019/0425/e5d07b2dff464cc39bc9aaa77deee911.jpg');
+INSERT INTO `pms_album_pic` VALUES (383, 40, 'http://img10.jiuxian.com/brandlogo/2019/0425/61ef1ad8640344ab82b57768ad534b9b.jpg');
+INSERT INTO `pms_album_pic` VALUES (384, 41, 'http://img10.jiuxian.com/brandlogo/2019/0517/6450dfb5e9dd4b2ebc533b6ba137277b.jpg');
+INSERT INTO `pms_album_pic` VALUES (385, 41, 'http://img10.jiuxian.com/brandlogo/2016/1211/3d01f2ad4d4941aeb79193b99fdbad66.jpg');
+INSERT INTO `pms_album_pic` VALUES (386, 41, 'http://img10.jiuxian.com/brandlogo/2016/1211/cfe5a4bef6f9462894301459b244780c.jpg');
+INSERT INTO `pms_album_pic` VALUES (387, 41, 'http://img09.jiuxian.com/brandlogo/2016/1211/2ea9d38b9ed24fbaa257ef3ac3c67b8f.jpg');
+INSERT INTO `pms_album_pic` VALUES (388, 42, 'http://img09.jiuxian.com/brandlogo/2019/0425/5ccd3bcf3c234562bfe42286af59110f.jpg');
+INSERT INTO `pms_album_pic` VALUES (389, 42, 'http://img06.jiuxian.com/brandlogo/2019/0425/c0a9e20a12e64809b507675eca8f88ea.jpg');
+INSERT INTO `pms_album_pic` VALUES (390, 42, 'http://img10.jiuxian.com/brandlogo/2019/0425/eac1e9c4b2d34827a1b6a6e5271fd102.jpg');
+INSERT INTO `pms_album_pic` VALUES (391, 42, 'http://img07.jiuxian.com/brandlogo/2019/0425/783bb1b2913041b294543bcea2fc5cfd.jpg');
+INSERT INTO `pms_album_pic` VALUES (392, 42, 'http://img10.jiuxian.com/brandlogo/2019/0425/63125a12be7745caa44679a61315efb2.jpg');
+INSERT INTO `pms_album_pic` VALUES (393, 42, 'http://img10.jiuxian.com/brandlogo/2019/0425/30dcacdb976c48949ccc6caafbc10531.jpg');
+INSERT INTO `pms_album_pic` VALUES (394, 42, 'http://img07.jiuxian.com/brandlogo/2019/0425/b5b12fc9a43348e5b3c7e6ca8d6f1f79.jpg');
+INSERT INTO `pms_album_pic` VALUES (395, 42, 'http://img06.jiuxian.com/brandlogo/2019/0425/4eebfb8af71a4ded9d2dbac8203af11b.jpg');
+INSERT INTO `pms_album_pic` VALUES (396, 42, 'http://img06.jiuxian.com/brandlogo/2019/0425/f372e784920f44d69db8ed2aee1acba9.jpg');
+INSERT INTO `pms_album_pic` VALUES (397, 42, 'http://img09.jiuxian.com/brandlogo/2019/0425/f1391bfdf619496a8c2b27114feccc9c.jpg');
+INSERT INTO `pms_album_pic` VALUES (398, 42, 'http://img07.jiuxian.com/brandlogo/2019/0425/dee8eecf0eef4088845c1ea5f9d0d136.jpg');
 
 -- ----------------------------
 -- Table structure for pms_brand
@@ -374,7 +426,7 @@ INSERT INTO `pms_brand` VALUES (2, '洋酒', '', 'https://img09.jiuxian.com/bill
 INSERT INTO `pms_brand` VALUES (3, '红酒整箱', '', 'https://img09.jiuxian.com/bill/2020/0101/75b48d587be04c749b3852f74c6c0cd0.jpg', NULL, NULL, 1);
 INSERT INTO `pms_brand` VALUES (4, '老酒', '', 'https://img07.jiuxian.com/bill/2019/1231/72db28c3a97a458ba6b4219fed821769.jpg', NULL, NULL, 1);
 INSERT INTO `pms_brand` VALUES (5, '葡萄酒', '', 'https://img08.jiuxian.com/bill/2019/1231/d683f99fd00349ea811b24c0c2d0a17c.jpg', NULL, NULL, 1);
-INSERT INTO `pms_brand` VALUES (6, '', '', 'https://img06.jiuxian.com/bill/2019/1231/a3afdafa60ac43bf94d95bbe92e2bfcf.jpg', NULL, NULL, 1);
+INSERT INTO `pms_brand` VALUES (6, '啤酒', '', 'https://img06.jiuxian.com/bill/2019/1231/a3afdafa60ac43bf94d95bbe92e2bfcf.jpg', NULL, NULL, 1);
 
 -- ----------------------------
 -- Table structure for pms_product
@@ -395,63 +447,60 @@ CREATE TABLE `pms_product`  (
   `market_price` decimal(10, 2) NULL DEFAULT NULL COMMENT '市场价',
   `gift_point` int(11) NULL DEFAULT 0 COMMENT '赠送的积分',
   `use_point_limit` int(11) NULL DEFAULT NULL COMMENT '限制使用的积分数',
-  `sub_title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '副标题',
-  `product_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标题',
+  `sub_title` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '商品描述',
   `product_stock` int(11) NULL DEFAULT NULL COMMENT '库存',
   `album_pics` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '画册图片，连产品图片限制为5张，以逗号分割',
   `product_note` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`product_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 100 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品信息' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 48 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '商品信息' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of pms_product
 -- ----------------------------
-INSERT INTO `pms_product` VALUES (1, 1, 1, 'https://img06.jiuxian.com/2019/0902/29e4f1ce36eb46678ba34c7be529e5d52.jpg', 'No10001', 0, 1, 0, 1, 200, 50.00, 51.00, 2299, 52, '【包邮】52°白水杜康一坛老酒1000ml', '浓香型', '水、高粱、小麦、大麦', 1000, '干燥、通风、阴凉、清洁处', '陕西白水杜康酒业有限责任公司');
-INSERT INTO `pms_product` VALUES (2, 1, 1, 'https://img09.jiuxian.com/2015/0623/61c57bedb1e54338af5551fa57f0f36a2.jpg', 'No10002', 0, 1, 0, 1, 200, 49.00, 50.00, 2499, 48, '48°湘泉牌老湘泉125ml', '馥郁香型', '泉水、高粱、糯米、小麦、大米、玉米', 1000, '干燥、通风、阴凉、清洁处', '酒鬼酒股份有限公司');
-INSERT INTO `pms_product` VALUES (3, 1, 1, 'https://img08.jiuxian.com/2017/0607/48b7f500b8bb4083af9e840ca1b8ef412.jpg', 'No10003', 0, 1, 0, 1, 200, 39.00, 7599.00, 4299, 45, '【老酒特卖】45°五粮液祝君祥福100ml(2012-2013年)（6瓶装）', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 1000, '干燥、通风、阴凉、清洁处', '酒鬼酒股份有限公司');
-INSERT INTO `pms_product` VALUES (4, 1, 1, 'https://img08.jiuxian.com/2019/1203/a634474a7a1842928cbc9896a3adcb8b2.jpg', 'No10004', 0, 1, 0, 1, 200, 67.00, 5299.00, 1799, 53, '53°贵州茅台镇 酱香型白酒 赖锦初私藏纯粮 纯粮食高粱酒 整箱500ml*4瓶', '酱香型', '高粱、小麦、水', 500, '在干燥、通风、阴凉、清洁的条件下', '贵州省仁怀市茅台镇天地人和酿酒有限公司');
-INSERT INTO `pms_product` VALUES (5, 1, 1, 'https://img09.jiuxian.com/2017/0822/78c0b66acb7a4707aedb70de47000a812.jpg', 'No10005', 0, 1, 0, 1, 200, 199.00, 199.00, 1799, 52, '52°酒鬼原浆酒500ml', '馥郁香型', '泉水、玉米、高粱、小麦、大米、糯米', 500, '常温、干燥、阴凉、避光', '酒鬼酒股份有限公司');
-INSERT INTO `pms_product` VALUES (6, 1, 1, 'https://img08.jiuxian.com/2019/1231/1a688464f6144628a11ab33321f8f4cc2.jpg', 'No10006', 0, 1, 1, 1, 200, 215.00, 8899.00, 1799, 52, '【酒仙甄选】52°扳倒井 典藏52_500ml*6瓶 整箱装', '其他', '水、大米、糯米、小麦、玉米、高粱、小米', 500, '干燥、通风、阴凉、清洁处', '山东扳倒井股份有限公司');
-INSERT INTO `pms_product` VALUES (7, 1, 1, 'https://img09.jiuxian.com/2019/1126/2a1a5f50fb5743c39742607dcaf9f5f12.jpg', 'No10007', 0, 1, 0, 1, 700, 19.90, 20.00, 1999, 53, '53°郑酒师 壹号品鉴酒 酱香型白酒 坤沙小酒版 贵州茅台镇  固态纯粮 单瓶100ml', '酱香型', '高粱、小麦、水', 100, '在干燥、通风、阴凉、清洁的条件下', '贵州省仁怀市茅台镇天地人和酿酒有限公司');
-INSERT INTO `pms_product` VALUES (8, 2, 2, 'https://img07.jiuxian.com/2017/0503/98e610101dbc4fc6bff38ff62f007cd92.jpg', 'No20002', 0, 1, 1, 1, 200, 58.00, 4399.00, 1599, 40, '【包邮】40°英国金铃喜乐致醇调配苏格兰威士忌700ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 700, '干燥、通风、阴凉、清洁处', '洋酒城');
-INSERT INTO `pms_product` VALUES (9, 2, 2, 'https://img06.jiuxian.com/2018/1126/f64f01c3fb2241fdb21d6f5918c0e6792.jpg', 'No20003', 0, 1, 1, 1, 200, 58.00, 6399.00, 1199, 38, '【包邮】37.5°法国（原瓶进口）法圣古堡公爵伏特加700ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 700, '干燥、通风、阴凉、清洁处', '法圣古堡');
-INSERT INTO `pms_product` VALUES (10, 2, 2, 'http://img09.jiuxian.com/2018/1123/88aeae38780e47ecb09d10f69e3c0a745.jpg', 'No20004', 0, 1, 0, 1, 200, 598.00, 600.00, 1199, 40, '40°法国（原瓶进口）法圣古堡公爵XO白兰地700ml', '浓香型', '水、葡萄汁、焦糖色', 700, '干燥、通风、阴凉、清洁处', '法圣古堡');
-INSERT INTO `pms_product` VALUES (11, 2, 2, 'https://img10.jiuxian.com/2019/1225/51b701c876184915834953fddf940b682.jpg', 'No20005', 0, 1, 0, 1, 200, 29.00, 5299.00, 1799, 40, '40°高朗洋酒波朗圣XO白兰地500ml', '浓香型', '水、葡萄汁、焦糖色', 500, '干燥、通风、阴凉、清洁处', '酒游记酒类精品店');
-INSERT INTO `pms_product` VALUES (12, 2, 2, 'https://img06.jiuxian.com/2019/1230/5ef3526427a548b9819162bae3aeca192.jpg', 'No20006', 0, 1, 0, 1, 200, 59.00, 3399.00, 1299, 40, '40°路易马西尼XO洋酒白兰地迷你小瓶酒版50mL', '浓香型', '白兰地原酒', 50, '干燥、通风、阴凉、清洁处', '泓利酒类精品店');
-INSERT INTO `pms_product` VALUES (13, 2, 2, 'https://img07.jiuxian.com/2017/0106/3c0b1a4c97d248be868da541e56b9d0d2.jpg', 'No20007', 0, 1, 0, 1, 200, 50.00, 13999.00, 3798, 40, '40°英国百龄坛特醇苏格兰威士忌500ml', '浓香型', '水，麦芽，小麦，焦糖色', 500, '干燥、通风、阴凉、清洁处', '百龄坛');
-INSERT INTO `pms_product` VALUES (14, 2, 2, 'https://img07.jiuxian.com/2019/1224/7a9ea1714bdd496fac3bc546ed5e50002.jpg', 'No20008', 0, 1, 0, 1, 200, 69.00, 4088.00, 1898, 40, '40°法国卡爹拉金典VSOP白兰地700ml', '浓香型', '水、葡萄汁、焦糖色', 700, '干燥、通风、阴凉、清洁处', '蜂行名酒汇官方旗舰店');
-INSERT INTO `pms_product` VALUES (15, 3, 3, 'http://img07.jiuxian.com/2017/0221/9a0729cdcac94714ae9c034bb3f4f05d4.jpg', 'No20009', 0, 1, 0, 1, 200, 99.00, 5088.00, 2698, 12, '西班牙安徒生·小天鹅干红葡萄酒750ml（6瓶装）', '果香浓郁，略带一点香料气息。', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', 'FSA酿酒集团');
-INSERT INTO `pms_product` VALUES (16, 3, 3, 'http://img07.jiuxian.com/2019/1223/ec8510eec62b416e9841b5db123e40874.jpg', 'No20010', 0, 1, 0, 1, 200, 399.00, 2299.00, 5698, 14, '【到手12支】拉蒙维勒堡酒庄波尔多AOC级法国原瓶进口干红葡萄酒750ml*6整箱装', '浓香型', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '法国拉蒙官方旗舰店');
-INSERT INTO `pms_product` VALUES (17, 3, 3, 'http://img09.jiuxian.com/2016/1223/540bb441b5aa43e4a16d1d3edc75b4e84.jpg', NULL, 0, 1, 1, 1, 300, 218.00, 230.00, 454, 14, '澳洲整箱红酒澳大利亚奔富洛神山庄梅洛红葡萄酒750ml (6瓶装)', '花香，果香', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '奔富酒庄');
-INSERT INTO `pms_product` VALUES (18, 3, 3, 'http://img06.jiuxian.com/2016/1230/c6bdbab51b654fe29dd9a1a2d570be934.jpg', 'No20012', 0, 1, 0, 1, 500, 198.00, 2899.00, 4298, 14, '智利整箱红酒智利干露.克拉克干红葡萄酒750ml（6瓶装）', '浓香型', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '中酿波尔多酒业');
-INSERT INTO `pms_product` VALUES (19, 3, 3, 'http://img09.jiuxian.com/2017/0209/c65aaca28bc1492bb2570ebb28b8f24b4.jpg', 'No20013', 0, 1, 0, 1, 500, 268.00, 3099.00, 3698, 14, '澳洲整箱红酒澳大利亚黄尾袋鼠梅洛红葡萄酒750ml（6瓶装）', '成熟的樱桃和黑胡椒的香味又夹杂着烟草的气息。', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '黄尾袋鼠');
-INSERT INTO `pms_product` VALUES (20, 3, 3, 'http://img06.jiuxian.com/2019/0428/e7faf3e27ceb4ccca1f946ec45e3b8284.jpg', 'No20014', 0, 1, 0, 1, 500, 208.00, 1899.00, 2998, 15, '澳大利亚洲原瓶进口乔睿庄园M8西拉子干红葡萄酒750ml*6', '浓香型', '西拉子', 750, '干燥、通风、阴凉、清洁处', '乔睿官方旗舰店');
-INSERT INTO `pms_product` VALUES (21, 3, 3, 'http://img06.jiuxian.com/2019/1106/3f7e5df6f2b0403dba87dc237d1928b34.png', 'No20015', 0, 1, 0, 1, 500, 548.00, 2899.00, 3298, 12, '法国拉菲罗斯柴尔德珍藏波尔多法定产区红葡萄酒750ml*6（DBR行货）', '浓香型', '西拉子', 750, '干燥、通风、阴凉、清洁处', '拉菲');
-INSERT INTO `pms_product` VALUES (22, 4, 4, 'http://img06.jiuxian.com/2018/0917/ab5e52fc89f94b9788ff056b795017d94.jpg', 'No20016', 0, 1, 0, 1, 500, 39.00, 1590.00, 2798, 50, '【老酒特卖】50°西凤贡酒 125ml（2012年-2013年）', '浓香型', '水、高粱、小麦', 125, '干燥、通风、阴凉、清洁处', '西凤酒厂');
-INSERT INTO `pms_product` VALUES (23, 4, 4, 'http://img09.jiuxian.com/2013/1002/7bc45e5c405341a1872be2b64ee4fb174.jpg', 'No20017', 0, 1, 0, 1, 500, 49.00, 899.00, 2998, 42, '【老酒特卖】42°献王嘉宾500ml(2013年)', '浓香型', '纯净水、高粱、小麦、大麦、豌豆', 500, '干燥、通风、阴凉、清洁处', '河北献王酒业有限公司');
-INSERT INTO `pms_product` VALUES (24, 4, 4, 'http://img06.jiuxian.com/2013/1002/5216098b0a2c4cba8313c613330f1d9b4.jpg', 'No20018', 0, 1, 0, 1, 500, 39.00, 1299.00, 2398, 38, '【老酒特卖】38°漂流瓶酒350ml（亲情瓶）(2014年)', '浓香型', '水、高粱、小麦、大麦、豌豆', 350, '干燥、通风、阴凉、清洁处', '河北献王酒业有限公司');
-INSERT INTO `pms_product` VALUES (25, 4, 4, 'http://img06.jiuxian.com/2014/0426/bf9fd1a028b54a4f9c503a4a630aa7c14.jpg', 'No20019', 0, 1, 0, 1, 500, 69.00, 1899.00, 1198, 42, '【老酒特卖】42°河套老窖500ml（2013年）', '浓香型', '水、高粱、小麦、大米、糯米、玉米', 500, '干燥、通风、阴凉、清洁处', '内蒙古河套酒业集团股份有限公司');
-INSERT INTO `pms_product` VALUES (26, 4, 4, 'http://img09.jiuxian.com/2014/0825/b283c78d952c48bbbaf26a2b6c72b57e4.jpg', 'No20020', 0, 1, 0, 1, 500, 89.00, 649.00, 1898, 52, '【老酒特卖】52°五粮液股份天贝春高档喜酒500ml(2014年)', '无', '水、高梁、大米、糯米、小麦、玉米', 1000, '干燥、通风、阴凉、清洁处', '宜宾五粮液股份有限公司');
-INSERT INTO `pms_product` VALUES (27, 4, 4, 'http://img07.jiuxian.com/2016/0510/67b8eb12492e497eb4eb30211d9a7d074.jpg', 'No20021', 0, 1, 0, 1, 500, 49.00, 1699.00, 1398, 46, '【老酒特卖】46°红星二锅头珍品100ml（2011-2013年）', '清香型', '水、高粱、大麦、豌豆', 100, '干燥、通风、阴凉、清洁处', '北京红星股份有限公司');
-INSERT INTO `pms_product` VALUES (28, 4, 4, 'http://img08.jiuxian.com/2018/1225/150b66fa6dfa4740956ee1da58b8817b4.jpg', 'No30001', 0, 1, 0, 1, 500, 39.00, 20099.00, 998, 45, '【老酒特卖】45°五粮液祝君祥福100ml(2012年-2013年)（3瓶装）', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 100, '干燥、通风、阴凉、清洁处', '五粮液');
-INSERT INTO `pms_product` VALUES (29, 5, 5, 'https://img06.jiuxian.com/2019/0225/8ff27752af0d4358a8456913a00502d62.jpg', 'No30002', 0, 1, 1, 1, 500, 399.00, 3899.00, 1148, 12, '西班牙安徒生·夜莺干红葡萄酒750ml', '莓果香气', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '安徒生');
-INSERT INTO `pms_product` VALUES (30, 5, 5, 'https://img10.jiuxian.com/2018/1106/dce1464f3b3842d0973e63c77e6f27e12.jpg', 'No30003', 0, 1, 1, 1, 500, 399.00, 1899.00, 949, 12, '法国狮吼堡（升级版）干红葡萄酒750ml法国狮吼堡（升级版）干红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '中酿波尔多酒业');
-INSERT INTO `pms_product` VALUES (31, 5, 5, 'https://img10.jiuxian.com/2017/0601/76d91ff41241457e8b74788140eac3be2.jpg', 'No30004', 0, 1, 0, 1, 500, 268.00, 2799.00, 1598, 13, '澳大利亚丁戈树红标经典红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '丁戈树');
-INSERT INTO `pms_product` VALUES (32, 5, 5, 'https://img08.jiuxian.com/2017/0922/6b7d4979a28b4fd3af28e3169e58ba812.jpg', 'No30005', 0, 1, 0, 1, 300, 39.00, 1399.00, 1598, 12, '【包邮】西班牙DO级安徒生美人鱼干红葡萄酒750ml', '果香浓郁，略带一点香料气息。', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '安徒生');
-INSERT INTO `pms_product` VALUES (33, 5, 5, 'https://img08.jiuxian.com/2019/0403/a38df60cc17d453e9fe89b907bd3b2d52.jpg', 'No30006', 0, 1, 0, 1, 300, 399.00, 3199.00, 1298, 13, '法国梦特骑士红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '酒之源酒类精品店');
-INSERT INTO `pms_product` VALUES (34, 5, 5, 'https://img06.jiuxian.com/2019/0125/b7566cb89ddd449ea915458d94604aa12.jpg', 'No30007', 0, 1, 0, 1, 300, 199.00, 1799.00, 799, 13, '智利星得斯H600红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '星得斯');
-INSERT INTO `pms_product` VALUES (35, 5, 5, 'https://img10.jiuxian.com/2016/1117/0be1c0b2a8b34b1f9ef4887ef4f991df2.jpg', 'No30008', 0, 1, 0, 1, 300, 99.00, 2799.00, 749, 11, '【包邮】法国红酒法国（原瓶进口）维纳斯贝壳干红葡萄酒（单支礼盒）750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '五洲海购');
-INSERT INTO `pms_product` VALUES (38, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (39, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (40, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (41, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (42, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (43, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (44, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (45, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (46, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_product` VALUES (47, 3, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `pms_product` VALUES (1, 1, 1, 'https://img06.jiuxian.com/2019/0902/29e4f1ce36eb46678ba34c7be529e5d52.jpg', 'No10001', 0, 1, 0, 1, 200, 50.00, 51.00, 2299, 52, '【包邮】52°白水杜康一坛老酒1000ml', '浓香型', '水、高粱、小麦、大麦', 1000, '干燥、通风、阴凉、清洁处', '美酒集团');
+INSERT INTO `pms_product` VALUES (2, 1, 1, 'https://img09.jiuxian.com/2015/0623/61c57bedb1e54338af5551fa57f0f36a2.jpg', 'No10002', 0, 1, 0, 1, 200, 49.00, 50.00, 2499, 48, '48°湘泉牌老湘泉125ml', '馥郁香型', '泉水、高粱、糯米、小麦、大米、玉米', 1000, '干燥、通风、阴凉、清洁处', '美酒集团');
+INSERT INTO `pms_product` VALUES (3, 1, 1, 'https://img08.jiuxian.com/2017/0607/48b7f500b8bb4083af9e840ca1b8ef412.jpg', 'No10003', 0, 1, 0, 1, 200, 39.00, 7599.00, 4299, 45, '【老酒特卖】45°五粮液祝君祥福100ml(2012-2013年)（6瓶装）', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 1000, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (4, 1, 1, 'https://img08.jiuxian.com/2019/1203/a634474a7a1842928cbc9896a3adcb8b2.jpg', 'No10004', 0, 1, 0, 1, 200, 67.00, 5299.00, 1799, 53, '53°贵州茅台镇 酱香型白酒 赖锦初私藏纯粮 纯粮食高粱酒 整箱500ml*4瓶', '酱香型', '高粱、小麦、水', 500, '在干燥、通风、阴凉、清洁的条件下', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (5, 1, 1, 'https://img09.jiuxian.com/2017/0822/78c0b66acb7a4707aedb70de47000a812.jpg', 'No10005', 0, 1, 0, 1, 200, 199.00, 199.00, 1799, 52, '52°酒鬼原浆酒500ml', '馥郁香型', '泉水、玉米、高粱、小麦、大米、糯米', 500, '常温、干燥、阴凉、避光', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (6, 1, 1, 'https://img08.jiuxian.com/2019/1231/1a688464f6144628a11ab33321f8f4cc2.jpg', 'No10006', 0, 1, 1, 1, 200, 215.00, 8899.00, 1799, 52, '【酒仙甄选】52°扳倒井 典藏52_500ml*6瓶 整箱装', '其他', '水、大米、糯米、小麦、玉米、高粱、小米', 500, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (7, 1, 1, 'https://img09.jiuxian.com/2019/1126/2a1a5f50fb5743c39742607dcaf9f5f12.jpg', 'No10007', 0, 1, 0, 1, 700, 19.90, 20.00, 1999, 53, '53°郑酒师 壹号品鉴酒 酱香型白酒 坤沙小酒版 贵州茅台镇  固态纯粮 单瓶100ml', '酱香型', '高粱、小麦、水', 100, '在干燥、通风、阴凉、清洁的条件下', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (8, 2, 2, 'https://img07.jiuxian.com/2017/0503/98e610101dbc4fc6bff38ff62f007cd92.jpg', 'No20002', 0, 1, 1, 1, 200, 58.00, 4399.00, 1599, 40, '【包邮】40°英国金铃喜乐致醇调配苏格兰威士忌700ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 700, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (9, 2, 2, 'https://img06.jiuxian.com/2018/1126/f64f01c3fb2241fdb21d6f5918c0e6792.jpg', 'No20003', 0, 1, 1, 1, 200, 58.00, 6399.00, 1199, 38, '【包邮】37.5°法国（原瓶进口）法圣古堡公爵伏特加700ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 700, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (10, 2, 2, 'http://img09.jiuxian.com/2018/1123/88aeae38780e47ecb09d10f69e3c0a745.jpg', 'No20004', 0, 1, 0, 1, 200, 598.00, 600.00, 1199, 40, '40°法国（原瓶进口）法圣古堡公爵XO白兰地700ml', '浓香型', '水、葡萄汁、焦糖色', 700, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (11, 2, 2, 'https://img10.jiuxian.com/2019/1225/51b701c876184915834953fddf940b682.jpg', 'No20005', 0, 1, 0, 1, 200, 29.00, 5299.00, 1799, 40, '40°高朗洋酒波朗圣XO白兰地500ml', '浓香型', '水、葡萄汁、焦糖色', 500, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (12, 2, 2, 'https://img06.jiuxian.com/2019/1230/5ef3526427a548b9819162bae3aeca192.jpg', 'No20006', 0, 1, 0, 1, 200, 59.00, 3399.00, 1299, 40, '40°路易马西尼XO洋酒白兰地迷你小瓶酒版50mL', '浓香型', '白兰地原酒', 50, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (13, 2, 2, 'https://img07.jiuxian.com/2017/0106/3c0b1a4c97d248be868da541e56b9d0d2.jpg', 'No20007', 0, 1, 0, 1, 200, 50.00, 13999.00, 3798, 40, '40°英国百龄坛特醇苏格兰威士忌500ml', '浓香型', '水，麦芽，小麦，焦糖色', 500, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (14, 2, 2, 'https://img07.jiuxian.com/2019/1224/7a9ea1714bdd496fac3bc546ed5e50002.jpg', 'No20008', 0, 1, 0, 1, 200, 69.00, 4088.00, 1898, 40, '40°法国卡爹拉金典VSOP白兰地700ml', '浓香型', '水、葡萄汁、焦糖色', 700, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (15, 3, 3, 'http://img07.jiuxian.com/2017/0221/9a0729cdcac94714ae9c034bb3f4f05d4.jpg', 'No20009', 0, 1, 0, 1, 200, 99.00, 5088.00, 2698, 12, '西班牙安徒生·小天鹅干红葡萄酒750ml（6瓶装）', '果香浓郁，略带一点香料气息。', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (16, 3, 3, 'http://img07.jiuxian.com/2019/1223/ec8510eec62b416e9841b5db123e40874.jpg', 'No20010', 0, 1, 0, 1, 200, 399.00, 2299.00, 5698, 14, '【到手12支】拉蒙维勒堡酒庄波尔多AOC级法国原瓶进口干红葡萄酒750ml*6整箱装', '浓香型', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,商务用酒');
+INSERT INTO `pms_product` VALUES (17, 3, 3, 'http://img09.jiuxian.com/2016/1223/540bb441b5aa43e4a16d1d3edc75b4e84.jpg', NULL, 0, 1, 1, 1, 300, 218.00, 230.00, 454, 14, '澳洲整箱红酒澳大利亚奔富洛神山庄梅洛红葡萄酒750ml (6瓶装)', '花香，果香', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (18, 3, 3, 'http://img06.jiuxian.com/2016/1230/c6bdbab51b654fe29dd9a1a2d570be934.jpg', 'No20012', 0, 1, 0, 1, 500, 198.00, 2899.00, 4298, 14, '智利整箱红酒智利干露.克拉克干红葡萄酒750ml（6瓶装）', '浓香型', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (19, 3, 3, 'http://img09.jiuxian.com/2017/0209/c65aaca28bc1492bb2570ebb28b8f24b4.jpg', 'No20013', 0, 1, 0, 1, 500, 268.00, 3099.00, 3698, 14, '澳洲整箱红酒澳大利亚黄尾袋鼠梅洛红葡萄酒750ml（6瓶装）', '成熟的樱桃和黑胡椒的香味又夹杂着烟草的气息。', '水、葡萄汁、焦糖色', 750, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (20, 3, 3, 'http://img06.jiuxian.com/2019/0428/e7faf3e27ceb4ccca1f946ec45e3b8284.jpg', 'No20014', 0, 1, 0, 1, 500, 208.00, 1899.00, 2998, 15, '澳大利亚洲原瓶进口乔睿庄园M8西拉子干红葡萄酒750ml*6', '浓香型', '西拉子', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (21, 3, 3, 'http://img06.jiuxian.com/2019/1106/3f7e5df6f2b0403dba87dc237d1928b34.png', 'No20015', 0, 1, 0, 1, 500, 548.00, 2899.00, 3298, 12, '法国拉菲罗斯柴尔德珍藏波尔多法定产区红葡萄酒750ml*6（DBR行货）', '浓香型', '西拉子', 750, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (22, 4, 4, 'http://img06.jiuxian.com/2018/0917/ab5e52fc89f94b9788ff056b795017d94.jpg', 'No20016', 0, 1, 0, 1, 500, 39.00, 1590.00, 2798, 50, '【老酒特卖】50°西凤贡酒 125ml（2012年-2013年）', '浓香型', '水、高粱、小麦', 125, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (23, 4, 4, 'http://img09.jiuxian.com/2013/1002/7bc45e5c405341a1872be2b64ee4fb174.jpg', 'No20017', 0, 1, 0, 1, 500, 49.00, 899.00, 2998, 42, '【老酒特卖】42°献王嘉宾500ml(2013年)', '浓香型', '纯净水、高粱、小麦、大麦、豌豆', 500, '干燥、通风、阴凉、清洁处', '婚庆用酒,商务用酒');
+INSERT INTO `pms_product` VALUES (24, 4, 4, 'http://img06.jiuxian.com/2013/1002/5216098b0a2c4cba8313c613330f1d9b4.jpg', 'No20018', 0, 1, 0, 1, 500, 39.00, 1299.00, 2398, 38, '【老酒特卖】38°漂流瓶酒350ml（亲情瓶）(2014年)', '浓香型', '水、高粱、小麦、大麦、豌豆', 350, '干燥、通风、阴凉、清洁处', '婚庆用酒,商务用酒');
+INSERT INTO `pms_product` VALUES (25, 4, 4, 'http://img06.jiuxian.com/2014/0426/bf9fd1a028b54a4f9c503a4a630aa7c14.jpg', 'No20019', 0, 1, 0, 1, 500, 69.00, 1899.00, 1198, 42, '【老酒特卖】42°河套老窖500ml（2013年）', '浓香型', '水、高粱、小麦、大米、糯米、玉米', 500, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (26, 4, 4, 'http://img09.jiuxian.com/2014/0825/b283c78d952c48bbbaf26a2b6c72b57e4.jpg', 'No20020', 0, 1, 0, 1, 500, 89.00, 649.00, 1898, 52, '【老酒特卖】52°五粮液股份天贝春高档喜酒500ml(2014年)', '无', '水、高梁、大米、糯米、小麦、玉米', 1000, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (27, 4, 4, 'http://img07.jiuxian.com/2016/0510/67b8eb12492e497eb4eb30211d9a7d074.jpg', 'No20021', 0, 1, 0, 1, 500, 49.00, 1699.00, 1398, 46, '【老酒特卖】46°红星二锅头珍品100ml（2011-2013年）', '清香型', '水、高粱、大麦、豌豆', 100, '干燥、通风、阴凉、清洁处', '婚庆用酒,商务用酒');
+INSERT INTO `pms_product` VALUES (28, 4, 4, 'http://img08.jiuxian.com/2018/1225/150b66fa6dfa4740956ee1da58b8817b4.jpg', 'No30001', 0, 1, 0, 1, 500, 39.00, 20099.00, 998, 45, '【老酒特卖】45°五粮液祝君祥福100ml(2012年-2013年)（3瓶装）', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 100, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (29, 5, 5, 'https://img06.jiuxian.com/2019/0225/8ff27752af0d4358a8456913a00502d62.jpg', 'No30002', 0, 1, 1, 1, 500, 399.00, 3899.00, 1148, 12, '西班牙安徒生·夜莺干红葡萄酒750ml', '莓果香气', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (30, 5, 5, 'https://img10.jiuxian.com/2018/1106/dce1464f3b3842d0973e63c77e6f27e12.jpg', 'No30003', 0, 1, 1, 1, 500, 399.00, 1899.00, 949, 12, '法国狮吼堡（升级版）干红葡萄酒750ml法国狮吼堡（升级版）干红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (31, 5, 5, 'https://img10.jiuxian.com/2017/0601/76d91ff41241457e8b74788140eac3be2.jpg', 'No30004', 0, 1, 0, 1, 500, 268.00, 2799.00, 1598, 13, '澳大利亚丁戈树红标经典红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (32, 5, 5, 'https://img08.jiuxian.com/2017/0922/6b7d4979a28b4fd3af28e3169e58ba812.jpg', 'No30005', 0, 1, 0, 1, 300, 39.00, 1399.00, 1598, 12, '【包邮】西班牙DO级安徒生美人鱼干红葡萄酒750ml', '果香浓郁，略带一点香料气息。', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (33, 5, 5, 'https://img08.jiuxian.com/2019/0403/a38df60cc17d453e9fe89b907bd3b2d52.jpg', 'No30006', 0, 1, 0, 1, 300, 399.00, 3199.00, 1298, 13, '法国梦特骑士红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (34, 5, 5, 'https://img06.jiuxian.com/2019/0125/b7566cb89ddd449ea915458d94604aa12.jpg', 'No30007', 0, 1, 0, 1, 300, 199.00, 1799.00, 799, 13, '智利星得斯H600红葡萄酒750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (35, 5, 5, 'https://img10.jiuxian.com/2016/1117/0be1c0b2a8b34b1f9ef4887ef4f991df2.jpg', 'No30008', 0, 1, 0, 1, 300, 99.00, 2799.00, 749, 11, '【包邮】法国红酒法国（原瓶进口）维纳斯贝壳干红葡萄酒（单支礼盒）750ml', '浓香型', '泉水、高粱、糯米、小麦、大米、玉米', 750, '干燥、通风、阴凉、清洁处', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (36, 6, 6, 'http://img08.jiuxian.com/2019/1212/3b569ad4111c4c44a132934fa0eabf9d4.jpg', NULL, NULL, 1, 0, 1, 300, 18.00, 20.00, 151, 2, '菠萝味果味碳酸饮料非菠萝啤无酒精500mL（9听装）', '菠萝香型', '水、麦芽、大米、酒花', 500, '常温、干燥、通风 、避光、贮藏', '婚庆用酒,商务用酒');
+INSERT INTO `pms_product` VALUES (37, 6, 6, 'http://img06.jiuxian.com/2019/1211/8aebe3c2bb6d4c9f91ff5fb9f6e0b2a14.jpg', NULL, NULL, 1, 0, 1, 300, 69.00, 80.00, 1451, 5, '皇家碧域棕啤330ml*24听（超值！第二件立减20元！）', '麦芽焦香', '水，小麦', 330, '常温、干燥、通风 、避光、贮藏', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (38, 6, 6, 'http://img09.jiuxian.com/2019/0903/aa590e8e21f94b2f91950ba05793cb954.jpg', NULL, NULL, 1, 0, 1, 300, 99.00, 109.00, 1112, 5, 'Kaiserdom凯撒顿姆白啤酒德国进口节日礼盒版1L*4听装', '麦芽焦香', '水，小麦麦芽、啤酒麦芽、酵母、啤酒花', 1000, '常温、干燥、通风 、避光、贮藏', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (39, 6, 6, 'http://img08.jiuxian.com/2019/0828/14e0f1fcffb144e2b61b9662c0d29b2b4.jpg', NULL, NULL, 1, 0, 1, 300, 59.00, 69.00, 1154, 5, '凯尔特人德国进口拉格啤酒500ml*9听', '麦芽焦香', '水、大麦麦芽、酒花浸香', 500, '常温、干燥、通风 、避光、贮藏', '婚庆用酒,聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (40, 6, 6, 'http://img07.jiuxian.com/2019/0425/13552da81c6a485f8eb144df744cef104.jpg', NULL, NULL, 1, 0, 1, 300, 59.00, 69.00, 15156, 5, '德利克斯原浆啤酒2号500mL（24听装）', '麦芽焦香', '水、麦芽、啤酒用糖浆、啤酒花', 500, '常温、干燥、通风 、避光、贮藏', '聚会用酒,礼节拜访');
+INSERT INTO `pms_product` VALUES (41, 6, 6, 'http://img09.jiuxian.com/2019/0917/b06fb9480a604598a6b915d53a4f5f5d4.jpg', NULL, NULL, 1, 0, 1, 300, 69.00, 78.00, 41545, 5, '德国进口啤酒费尔德堡大麦黑啤酒500ml(18听装)', '麦芽焦香', '水、麦芽、啤酒花', 500, '常温、干燥、通风 、避光、贮藏', '聚会用酒,礼节拜访,商务用酒');
+INSERT INTO `pms_product` VALUES (42, 6, 6, 'http://img10.jiuxian.com/2019/0425/5b4ed52a14ee47ddb237c536eae38cb34.jpg', NULL, NULL, 1, 0, 1, 300, 78.00, 89.00, 1151, NULL, 'BAIRENBAHE白啤酒 德国工艺啤酒拜仁巴赫.艾尔330ml*24听（整箱装）', '麦芽焦香', '水、麦芽、大米、酒花', 330, '常温、干燥、通风 、避光、贮藏', '聚会用酒,礼节拜访');
 
 -- ----------------------------
 -- Table structure for pms_product_comment
@@ -464,7 +513,7 @@ CREATE TABLE `pms_product_comment`  (
   `comment_time` datetime(0) NULL DEFAULT NULL,
   `comment_content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`comment_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for pms_series
@@ -476,37 +525,37 @@ CREATE TABLE `pms_series`  (
   `brand_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '品牌的id',
   `series_status` int(255) NULL DEFAULT 1 COMMENT '状态：1上架 0下架',
   PRIMARY KEY (`series_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '品牌表' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '品牌表' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of pms_series
 -- ----------------------------
-INSERT INTO `pms_series` VALUES (1, 'iPhone 8', '1', 1);
-INSERT INTO `pms_series` VALUES (2, 'iPhone X', '1', 1);
-INSERT INTO `pms_series` VALUES (3, 'iPhone XR', '1', 1);
-INSERT INTO `pms_series` VALUES (4, 'iPhone 11', '1', 1);
-INSERT INTO `pms_series` VALUES (5, 'iPhone 11Pro', '1', 1);
-INSERT INTO `pms_series` VALUES (6, 'HUAWEI Mate系列', '2', 1);
-INSERT INTO `pms_series` VALUES (7, 'HUAWEI P系列', '2', 1);
-INSERT INTO `pms_series` VALUES (8, 'HUAWEI nova系列', '2', 1);
-INSERT INTO `pms_series` VALUES (9, '华为畅享系列', '2', 1);
-INSERT INTO `pms_series` VALUES (10, 'HUAWEI 麦芒系列1111', '2', 1);
-INSERT INTO `pms_series` VALUES (11, '小米系列', '3', 1);
-INSERT INTO `pms_series` VALUES (12, '红米系列', '3', 1);
-INSERT INTO `pms_series` VALUES (13, 'Find系列', '4', 1);
-INSERT INTO `pms_series` VALUES (14, 'Reno系列', '4', 1);
-INSERT INTO `pms_series` VALUES (15, 'R系列', '4', 1);
-INSERT INTO `pms_series` VALUES (16, 'A系列', '4', 1);
-INSERT INTO `pms_series` VALUES (17, 'K系列', '4', 1);
-INSERT INTO `pms_series` VALUES (18, 'IQOO', '5', 1);
-INSERT INTO `pms_series` VALUES (19, 'NEX系列', '5', 1);
-INSERT INTO `pms_series` VALUES (20, 'X系列', '5', 1);
-INSERT INTO `pms_series` VALUES (21, 'S系列', '5', 1);
-INSERT INTO `pms_series` VALUES (22, 'Z系列', '5', 1);
-INSERT INTO `pms_series` VALUES (23, 'Y系列', '5', 1);
-INSERT INTO `pms_series` VALUES (24, 'U系列', '5', 1);
-INSERT INTO `pms_series` VALUES (25, '坚果', '6', 1);
-INSERT INTO `pms_series` VALUES (36, '测试', '6', 1);
+INSERT INTO `pms_series` VALUES (1, NULL, '1', 1);
+INSERT INTO `pms_series` VALUES (2, NULL, '1', 1);
+INSERT INTO `pms_series` VALUES (3, NULL, '1', 1);
+INSERT INTO `pms_series` VALUES (4, NULL, '1', 1);
+INSERT INTO `pms_series` VALUES (5, NULL, '1', 1);
+INSERT INTO `pms_series` VALUES (6, NULL, '2', 1);
+INSERT INTO `pms_series` VALUES (7, NULL, '2', 1);
+INSERT INTO `pms_series` VALUES (8, NULL, '2', 1);
+INSERT INTO `pms_series` VALUES (9, NULL, '2', 1);
+INSERT INTO `pms_series` VALUES (10, NULL, '2', 1);
+INSERT INTO `pms_series` VALUES (11, NULL, '3', 1);
+INSERT INTO `pms_series` VALUES (12, NULL, '3', 1);
+INSERT INTO `pms_series` VALUES (13, NULL, '4', 1);
+INSERT INTO `pms_series` VALUES (14, NULL, '4', 1);
+INSERT INTO `pms_series` VALUES (15, NULL, '4', 1);
+INSERT INTO `pms_series` VALUES (16, NULL, '4', 1);
+INSERT INTO `pms_series` VALUES (17, NULL, '4', 1);
+INSERT INTO `pms_series` VALUES (18, NULL, '5', 1);
+INSERT INTO `pms_series` VALUES (19, NULL, '5', 1);
+INSERT INTO `pms_series` VALUES (20, NULL, '5', 1);
+INSERT INTO `pms_series` VALUES (21, NULL, '5', 1);
+INSERT INTO `pms_series` VALUES (22, NULL, '5', 1);
+INSERT INTO `pms_series` VALUES (23, NULL, '5', 1);
+INSERT INTO `pms_series` VALUES (24, '', '5', 1);
+INSERT INTO `pms_series` VALUES (25, '', '6', 1);
+INSERT INTO `pms_series` VALUES (36, '', '6', 1);
 
 -- ----------------------------
 -- Table structure for pms_sku_stock
@@ -523,7 +572,7 @@ CREATE TABLE `pms_sku_stock`  (
   `pic` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '展示图片',
   `sale` int(11) NULL DEFAULT NULL COMMENT '销量',
   PRIMARY KEY (`sku_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 645 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'sku的库存' ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 178 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'sku的库存' ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of pms_sku_stock
@@ -633,27 +682,27 @@ INSERT INTO `pms_sku_stock` VALUES (102, 34, '20006001', NULL, NULL, '34', NULL,
 INSERT INTO `pms_sku_stock` VALUES (103, 35, '20006002', NULL, NULL, '35', NULL, 'http://img07.jiuxian.com/2016/1117/0be1c0b2a8b34b1f9ef4887ef4f991df5.jpg', NULL);
 INSERT INTO `pms_sku_stock` VALUES (104, 35, '20006003', NULL, NULL, '35', NULL, 'http://img10.jiuxian.com/2016/1117/ce679d5fa2df4c269e6be0e29614704b5.jpg', NULL);
 INSERT INTO `pms_sku_stock` VALUES (105, 35, '20006004', NULL, NULL, '35', NULL, 'http://img10.jiuxian.com/2016/1117/b8c392b96b694d6c97158751d2a72d2b5.jpg', NULL);
-INSERT INTO `pms_sku_stock` VALUES (106, NULL, '20006005', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (107, NULL, '20006006', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (108, NULL, '20006007', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (109, NULL, '20006008', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (110, NULL, '20007001', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (111, NULL, '20007002', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (112, NULL, '20008001', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (113, NULL, '20008002', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (114, NULL, '20008003', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (115, NULL, '20008004', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (116, NULL, '20008005', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (117, NULL, '20008006', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (118, NULL, '20008007', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (119, NULL, '20008008', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (120, NULL, '20008009', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (121, NULL, '20008010', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (122, NULL, '20008011', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (123, NULL, '20008012', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (124, NULL, '20008013', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (125, NULL, '20008014', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `pms_sku_stock` VALUES (126, NULL, '20008015', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `pms_sku_stock` VALUES (106, 36, '20006005', NULL, NULL, '36', NULL, 'http://img06.jiuxian.com/2019/1212/3b569ad4111c4c44a132934fa0eabf9d5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (107, 36, '20006006', NULL, NULL, '36', NULL, 'http://img09.jiuxian.com/2019/1212/d14407ea6d06491c87a5f4d2fd476bda5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (108, 36, '20006007', NULL, NULL, '36', NULL, 'http://img09.jiuxian.com/2019/1212/256cb9bf021c4566a1a58d8dade2f2425.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (109, 37, '20006008', NULL, NULL, '37', NULL, 'http://img06.jiuxian.com/2019/1211/8aebe3c2bb6d4c9f91ff5fb9f6e0b2a15.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (110, 37, '20007001', NULL, NULL, '37', NULL, 'http://img06.jiuxian.com/2019/1211/724a5ea6bb06408ea4ea72ad01bc40775.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (111, 37, '20007002', NULL, NULL, '37', NULL, 'http://img06.jiuxian.com/2019/1211/726f950ed5704f689efe75033e39f4ec5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (112, 38, '20008001', NULL, NULL, '38', NULL, 'http://img07.jiuxian.com/2019/0903/aa590e8e21f94b2f91950ba05793cb955.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (113, 38, '20008002', NULL, NULL, '38', NULL, 'http://img09.jiuxian.com/2019/0903/71c123a40fef4f5ba93f32707c0a733d5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (114, 38, '20008003', NULL, NULL, '38', NULL, 'http://img09.jiuxian.com/2019/0903/1ba45c866dd94910bd290ad4d7d1430b5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (115, 39, '20008004', NULL, NULL, '39', NULL, 'http://img06.jiuxian.com/2019/0828/14e0f1fcffb144e2b61b9662c0d29b2b5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (116, 39, '20008005', NULL, NULL, '39', NULL, 'http://img09.jiuxian.com/2019/0828/300f417d3f044d8797e194ed66b27c3c5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (117, 39, '20008006', NULL, NULL, '39', NULL, 'http://img07.jiuxian.com/2019/0828/6186f971ee404c56811b7fc80d7832555.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (118, 40, '20008007', NULL, NULL, '40', NULL, 'http://img09.jiuxian.com/2019/0425/13552da81c6a485f8eb144df744cef105.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (119, 40, '20008008', NULL, NULL, '40', NULL, 'http://img07.jiuxian.com/2019/0425/efc776733b2d4bfdb38d0083b1c2e8d75.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (120, 40, '20008009', NULL, NULL, '40', NULL, 'http://img06.jiuxian.com/2019/0425/053a22a0df0849ef977800a3cd055b275.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (121, 41, '20008010', NULL, NULL, '41', NULL, 'http://img07.jiuxian.com/2019/0517/94a95701544c4237ac28784f4c1e4b565.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (122, 41, '20008011', NULL, NULL, '41', NULL, 'http://img09.jiuxian.com/2019/0917/1a56d5c22b334e9d9d8d91feee02504f5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (123, 41, '20008012', NULL, NULL, '41', NULL, 'http://img07.jiuxian.com/2019/0517/94a95701544c4237ac28784f4c1e4b565.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (124, 42, '20008013', NULL, NULL, '42', NULL, 'http://img09.jiuxian.com/2019/0425/c3ad22d3d1df48e3965e5c85de160aea5.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (125, 42, '20008014', NULL, NULL, '42', NULL, 'http://img06.jiuxian.com/2019/0425/8daec55b15494ad7a79e06272d402bd65.jpg', NULL);
+INSERT INTO `pms_sku_stock` VALUES (126, 42, '20008015', NULL, NULL, '42', NULL, 'http://img09.jiuxian.com/2019/0425/c3ad22d3d1df48e3965e5c85de160aea5.jpg', NULL);
 INSERT INTO `pms_sku_stock` VALUES (127, NULL, '20008016', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `pms_sku_stock` VALUES (128, NULL, '20008017', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `pms_sku_stock` VALUES (129, NULL, '20008018', NULL, NULL, NULL, NULL, NULL, NULL);

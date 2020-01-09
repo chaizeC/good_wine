@@ -2,30 +2,88 @@
   <div id="home_wrapper">
     <Header class="header_wrapper">
       <van-row slot="header">
-        <van-col span="4">
-          <div class="felx_box">
-            <img src="../../common/img/wine.png" alt class="wine" />
+        <van-col span="3">
+          <div class="flex_box">
+            <div class="logo"></div>
           </div>
         </van-col>
 
-        <van-col span="20">
-          <div class="felx_box">
-            <el-input placeholder="请输入关键字搜索酒类" v-model="headerInput">
-              <i
-                slot="suffix"
-                class="el-input__icon el-icon-search header_search"
-                @click="getGoodBySearch(headerInput)"
-              ></i>
+        <van-col span="21">
+          <div class="flex_box">
+            <el-input placeholder="请输入关键字搜索酒类" v-model="headerInput" @click.native="goSearch">
+              <i slot="suffix" class="el-input__icon el-icon-search header_search"></i>
             </el-input>
           </div>
         </van-col>
       </van-row>
     </Header>
+    <!-- 轮播 -->
+    <Swiper :swiperList="swiperList" :swiperOption="swiperOption" class="swiper_wrapper"></Swiper>
+
+    <!-- 分类 -->
+    <div class="_flex mt cate_wrapper">
+      <div class="cate_item">
+        <img src="./img/baijiu.jpg" alt />
+      </div>
+
+      <div class="cate_item">
+        <img src="./img/putaojiu.jpg" alt />
+      </div>
+
+      <div class="cate_item">
+        <img src="./img/yangjiu.jpg" alt />
+      </div>
+
+      <div class="cate_item">
+        <img src="./img/pijiu.jpg" alt />
+      </div>
+
+      <div class="cate_item">
+        <img src="./img/laojiu.jpg" alt />
+        <div class="cover_img">
+          <img src="./img/laojiu.png" alt class="_img" />
+        </div>
+        <!-- <div class="cover_text">老酒</div> -->
+      </div>
+    </div>
+
+    <!-- 女人 -->
+    <van-row>
+      <van-col span="24">
+        <div class="mt">
+          <img src="./img/women.jpg" alt class="_img" />
+        </div>
+      </van-col>
+    </van-row>
+
+    <!-- 头条 -->
+    <div class="main _padding">
+      <div class="headlines">
+        <van-row>
+          <van-col span="24">精选频道</van-col>
+        </van-row>
+        <van-row>
+          <van-col span="24">
+            <img src="./img/zuoyin.png" />
+          </van-col>
+        </van-row>
+        <div class="recom_goods">
+          <Swiper :swiperList="recommendList" :swiperOption="swiper_recommend" :homeFlag="true"></Swiper>
+        </div>
+
+        <van-row>
+          <van-col span="2" offset="22">
+            <img src="./img/youyin.png" />
+          </van-col>
+        </van-row>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "../../components/Header/main";
+import Swiper from "../../components/Swiper/main";
 import Vue from "vue";
 import { Row, Col } from "vant";
 Vue.use(Row).use(Col);
@@ -33,53 +91,123 @@ import { request } from "../../request/request";
 export default {
   data() {
     return {
-      headerInput: ""
+      headerInput: "",
+      searchList: [],
+      swiperList: [],
+      swiperOption: {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination"
+        },
+        autoplay: {
+          disableOnInteraction: false
+        },
+        effect: "flip",
+        flipEffect: {
+          slideShadows: true,
+          limitRotation: true
+        }
+      },
+      swiper_recommend: {
+        autoplay: {
+          disableOnInteraction: false
+        },
+        slidesPerView: 3
+      },
+      temporyList: [],
+      random: "",
+      recommendList: []
     };
   },
+  created() {
+    this.getBrandLogo();
+  },
   methods: {
-    getGoodBySearch(value) {
+    goSearch() {
+      this.$router.push("/search");
+    },
+    getBrandLogo() {
       request({
-        url: "/selectProductByName",
-        params: {
-          product_name: value
-        }
-      }).then(res=>{
-        console.log(res);
-      }).catch(err=>{
-
+        url: "/brands"
       })
+        .then(res => {
+          this.swiperList = res.data;
+          this.temporyList = [];
+          this.temporyList = this.swiperList.map(item => item.brandId);
+          this.temporyList = this.getRandomArrayElements(this.temporyList, 2);
+          //请求随机商品  精彩推荐
+          request({
+            url: "/products",
+            params: {
+              series_id: this.temporyList[0]
+            }
+          }).then(res => {
+            // console.log(object);
+            this.recommendList = [];
+            this.recommendList.push(...res.data);
+            request({
+              url: "/products",
+              params: {
+                series_id: this.temporyList[1]
+              }
+            }).then(res => {
+              this.recommendList.push(...res.data);
+            });
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getRandomArrayElements(arr, count) {
+      var shuffled = arr.slice(0),
+        i = arr.length,
+        min = i - count,
+        temp,
+        index;
+      while (i-- > min) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+      }
+      return shuffled.slice(min);
     }
   },
   components: {
-    Header
+    Header,
+    Swiper
   }
 };
 </script>
 
-<style scoped>
-@import url("./style.less");
-</style>
-<style lang="less" scoped>
-#home_wrapper {
-  .header_wrapper {
-    padding: 0 15px;
-    .wine {
-      width: 30px;
-      height: 30px;
-    }
-  }
-  .felx_box {
-    display: flex;
-    flex-direction: column;
-    height: 44px;
-    justify-content: center;
-  }
-}
+
+<style lang="less" src='./style.less' scoped>
 </style>
 <style>
 .el-input.is-active .el-input__inner,
 .el-input__inner:focus {
   border-color: #dcdfe6;
   outline: 0;
+}
+.el-input__inner {
+  height: 25px;
+}
+.el-input__suffix-inner .el-input__icon.el-icon-search.header_search {
+  line-height: 25px;
+}
+.el-input--suffix .el-input__inner {
+  padding-left: 30px;
+  background-color: #ececec;
+  border: 0;
+}
+.el-input__suffix-inner .el-input__icon.el-icon-circle-close.el-input__clear {
+  line-height: 25px;
+}
+.swiper-slide img {
+  height: 200px;
+}
+.recom_goods img {
+  height: auto;
 }
 </style>

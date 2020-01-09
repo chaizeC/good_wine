@@ -17,6 +17,13 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
+// 懒加载
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  loading: require("./common/img/lazy.png"),
+  error: require("./common/img/lazy.png")
+})
+
 new Vue({
   router,
   store,

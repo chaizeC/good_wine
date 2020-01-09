@@ -8,8 +8,7 @@
 
 <script>
 export default {
-  props: {
-  }
+  props: {}
 };
 </script>
 
@@ -20,5 +19,6 @@ export default {
   z-index: 666;
   width: 100%;
   height: 44px;
+  background: white
 }
 </style>
