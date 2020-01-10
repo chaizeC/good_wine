@@ -9,7 +9,7 @@
         <div v-else>
           <img v-lazy="item.pic||item.productPic" />
           <div class="item_text">{{item.productName}}</div>
-          <div class="item_price _red">{{item.productPrice.toFixed(2)}}</div>
+          <div class="item_price _red">￥{{item.productPrice.toFixed(2)}}</div>
         </div>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -65,15 +65,19 @@ export default {
     width: 100%;
   }
   .item_text {
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+     font-size: 13px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    height: 40px;
+    font-weight: 400;
+    line-height: 20px;
   }
   .item_price {
-    font-size: 12px;
+        margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
   }
 }
 </style>

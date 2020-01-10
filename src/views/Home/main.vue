@@ -1,6 +1,11 @@
 <template>
   <div id="home_wrapper">
-    <Header class="header_wrapper">
+    <Header
+      class="header_wrapper"
+      @scroll.native="scrollEvent"
+      ref="header"
+      :class="{bg_white:scrollTop>0}"
+    >
       <van-row slot="header">
         <van-col span="3">
           <div class="flex_box">
@@ -21,7 +26,7 @@
     <Swiper :swiperList="swiperList" :swiperOption="swiperOption" class="swiper_wrapper"></Swiper>
 
     <!-- 分类 -->
-    <div class="_flex mt cate_wrapper">
+    <div class="_flex mt cate_wrapper" ref="cate">
       <div class="cate_item">
         <img src="./img/baijiu.jpg" alt />
       </div>
@@ -43,7 +48,7 @@
         <div class="cover_img">
           <img src="./img/laojiu.png" alt class="_img" />
         </div>
-        <!-- <div class="cover_text">老酒</div> -->
+        <div class="cover_text">老酒</div>
       </div>
     </div>
 
@@ -57,37 +62,51 @@
     </van-row>
 
     <!-- 头条 -->
-    <div class="main _padding">
+    <div class="main">
       <div class="headlines">
         <van-row>
           <van-col span="24">精选频道</van-col>
         </van-row>
+      </div>
+      <div class="_padding recom_all">
         <van-row>
           <van-col span="24">
-            <img src="./img/zuoyin.png" />
+            <img src="./img/zuoyin.png" class="img_25" />
           </van-col>
         </van-row>
         <div class="recom_goods">
-          <Swiper :swiperList="recommendList" :swiperOption="swiper_recommend" :homeFlag="true"></Swiper>
+          <Swiper
+            :swiperList="selectedChannelList"
+            :swiperOption="swiper_selected"
+            :homeFlag="true"
+          ></Swiper>
         </div>
 
         <van-row>
           <van-col span="2" offset="22">
-            <img src="./img/youyin.png" />
+            <img src="./img/youyin.png" class="img_25" />
           </van-col>
         </van-row>
       </div>
     </div>
+    <Recommend></Recommend>
+    <!-- 返回顶部 -->
+    <ReturnTop v-show="scrollTop>cate_top"></ReturnTop>
   </div>
 </template>
 
 <script>
 import Header from "../../components/Header/main";
 import Swiper from "../../components/Swiper/main";
+import ReturnTop from "../../components/ReturnTop/main";
+import Recommend from "../../components/Recommend/main";
 import Vue from "vue";
-import { Row, Col } from "vant";
-Vue.use(Row).use(Col);
+import { Row, Col, PullRefresh } from "vant";
+Vue.use(Row)
+  .use(Col)
+  .use(PullRefresh);
 import { request } from "../../request/request";
+
 export default {
   data() {
     return {
@@ -108,7 +127,7 @@ export default {
           limitRotation: true
         }
       },
-      swiper_recommend: {
+      swiper_selected: {
         autoplay: {
           disableOnInteraction: false
         },
@@ -116,11 +135,19 @@ export default {
       },
       temporyList: [],
       random: "",
-      recommendList: []
+      selectedChannelList: [],
+      scrollTop: "",
+      cate_top: ""
     };
   },
   created() {
     this.getBrandLogo();
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     goSearch() {
@@ -141,19 +168,26 @@ export default {
             params: {
               series_id: this.temporyList[0]
             }
-          }).then(res => {
-            // console.log(object);
-            this.recommendList = [];
-            this.recommendList.push(...res.data);
-            request({
-              url: "/products",
-              params: {
-                series_id: this.temporyList[1]
-              }
-            }).then(res => {
-              this.recommendList.push(...res.data);
+          })
+            .then(res => {
+              this.selectedChannelList = [];
+              this.selectedChannelList.push(...res.data);
+              request({
+                url: "/products",
+                params: {
+                  series_id: this.temporyList[1]
+                }
+              })
+                .then(res => {
+                  this.selectedChannelList.push(...res.data);
+                })
+                .catch(err => {
+                  console.log(err);
+                });
+            })
+            .catch(err => {
+              console.log(err);
             });
-          });
         })
         .catch(err => {
           console.log(err);
@@ -172,11 +206,22 @@ export default {
         shuffled[i] = temp;
       }
       return shuffled.slice(min);
+    },
+    handleScroll() {
+      this.scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      this.cate_top = this.$refs.cate.offsetTop;
     }
   },
+  computed: {},
+
   components: {
     Header,
-    Swiper
+    Swiper,
+    ReturnTop,
+    Recommend
   }
 };
 </script>
@@ -209,5 +254,12 @@ export default {
 }
 .recom_goods img {
   height: auto;
+  width: 25px;
+  border-radius: 20px;
+}
+.recom_goods .swiper-slide {
+  padding: 0 5px;
+  background: white;
+  border-radius: 20px;
 }
 </style>

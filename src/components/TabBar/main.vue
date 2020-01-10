@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #tabbar_wrapper {
   height: 46px;
   position: fixed;

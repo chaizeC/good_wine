@@ -20,7 +20,6 @@ export default {
 #app {
   font-family: "华文细黑", "Microsoft YaHei", "黑体", sans-serif;
   padding: 44px 0 46px;
-  height: 1000px;
 }
 
 ._flex {
