@@ -19,6 +19,6 @@ export default {
   z-index: 666;
   width: 100%;
   height: 44px;
-  background: white
+  background: white;
 }
 </style>

@@ -36,7 +36,7 @@ const routes = [
       title: "分类页"
     },
     component: () =>
-      import("../views/Category.vue/main")
+      import("../views/Category/main")
   },
   {
     path: "/profile",
@@ -57,6 +57,26 @@ const routes = [
     },
     component: () =>
       import("../views/Search/main")
+  },
+  {
+    path: "/twolevelcate/:id",
+    name: "twolevelcate",
+    meta: {
+      showTab: false,
+      title: "二级分类页"
+    },
+    component: () =>
+      import("../views/TwoLevelCate/main")
+  },
+  {
+    path: "/detail/:id",
+    name: "detail",
+    meta: {
+      showTab: false,
+      title: "详情页"
+    },
+    component: () =>
+      import("../views/Detail/main")
   },
 ];
 

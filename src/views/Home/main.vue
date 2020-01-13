@@ -23,8 +23,9 @@
       </van-row>
     </Header>
     <!-- 轮播 -->
-    <Swiper :swiperList="swiperList" :swiperOption="swiperOption" class="swiper_wrapper"></Swiper>
-
+    <div class="bgc_swiper">
+      <Swiper :swiperList="swiperList" :swiperOption="swiperOption" class="swiper_wrapper"></Swiper>
+    </div>
     <!-- 分类 -->
     <div class="_flex mt cate_wrapper" ref="cate">
       <div class="cate_item">
@@ -101,10 +102,9 @@ import Swiper from "../../components/Swiper/main";
 import ReturnTop from "../../components/ReturnTop/main";
 import Recommend from "../../components/Recommend/main";
 import Vue from "vue";
-import { Row, Col, PullRefresh } from "vant";
-Vue.use(Row)
-  .use(Col)
-  .use(PullRefresh);
+import { Row, Col } from "vant";
+Vue.use(Row).use(Col);
+
 import { request } from "../../request/request";
 
 export default {
@@ -230,26 +230,30 @@ export default {
 <style lang="less" src='./style.less' scoped>
 </style>
 <style>
-.el-input.is-active .el-input__inner,
+#home_wrapper .el-input.is-active .el-input__inner,
 .el-input__inner:focus {
   border-color: #dcdfe6;
   outline: 0;
 }
-.el-input__inner {
+#home_wrapper .el-input__inner {
   height: 25px;
 }
-.el-input__suffix-inner .el-input__icon.el-icon-search.header_search {
+#home_wrapper
+  .el-input__suffix-inner
+  .el-input__icon.el-icon-search.header_search {
   line-height: 25px;
 }
-.el-input--suffix .el-input__inner {
+#home_wrapper .el-input--suffix .el-input__inner {
   padding-left: 30px;
   background-color: #ececec;
   border: 0;
 }
-.el-input__suffix-inner .el-input__icon.el-icon-circle-close.el-input__clear {
+#home_wrapper
+  .el-input__suffix-inner
+  .el-input__icon.el-icon-circle-close.el-input__clear {
   line-height: 25px;
 }
-.swiper-slide img {
+#home_wrapper .bgc_swiper .swiper-slide img {
   height: 200px;
 }
 .recom_goods img {

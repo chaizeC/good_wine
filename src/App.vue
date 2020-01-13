@@ -31,7 +31,7 @@ export default {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 ._red {
-  color: #fc5a5a !important;
+  color: #ca141d !important;
 }
 ._flex_col {
   display: flex;
@@ -41,8 +41,8 @@ export default {
 ._padding {
   padding: 15px;
 }
-._img{
-  width: 100%
+._img {
+  width: 100%;
 }
 div {
   box-sizing: border-box;

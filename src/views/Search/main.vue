@@ -79,7 +79,8 @@ export default {
         "老窖",
         "干红",
         "白酒",
-        "拉菲"
+        "拉菲",
+        "啤酒"
       ],
       redList: []
     };
@@ -148,20 +149,23 @@ export default {
 <style lang="less" src='./style.less' scoped>
 </style>
 <style>
-.el-input.is-active .el-input__inner,
+._flex_col .el-input.is-active .el-input__inner,
 .el-input__inner:focus {
   border-color: #dcdfe6;
   outline: 0;
 }
-.el-input--prefix .el-input__inner {
+._flex_col .el-input--prefix .el-input__inner {
   padding-left: 30px;
   background-color: #ececec;
   border: 0;
 }
-.el-input__inner {
+._flex_col .el-input__inner {
   height: 25px;
 }
-.el-input__prefix .el-input__icon.el-icon-search.header_search {
+._flex_col .el-input__prefix .el-input__icon.el-icon-search.header_search {
+  line-height: 25px;
+}
+._flex_col .el-input__icon.el-icon-circle-close.el-input__clear {
   line-height: 25px;
 }
 </style>

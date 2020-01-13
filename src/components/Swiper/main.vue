@@ -4,10 +4,10 @@
       <!-- 必须设置vif否则loop无效 -->
       <swiper-slide v-for="(item, index) in swiperList" :key="index">
         <div v-if="!homeFlag">
-          <img :src="item.bigPic" alt />
+          <img :src="item.bigPic||item.pic" alt />
         </div>
         <div v-else>
-          <img v-lazy="item.pic||item.productPic" />
+          <img v-lazy="item.productPic" />
           <div class="item_text">{{item.productName}}</div>
           <div class="item_price _red">￥{{item.productPrice.toFixed(2)}}</div>
         </div>
@@ -65,7 +65,7 @@ export default {
     width: 100%;
   }
   .item_text {
-     font-size: 13px;
+    font-size: 13px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -75,7 +75,7 @@ export default {
     line-height: 20px;
   }
   .item_price {
-        margin-top: 10px;
+    margin-top: 10px;
     font-size: 15px;
     font-weight: 700;
   }
