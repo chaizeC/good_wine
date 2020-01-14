@@ -44,6 +44,18 @@ export default {
 ._img {
   width: 100%;
 }
+._white {
+  background: white;
+}
+._mt {
+  margin-top: 10px;
+}
+._r {
+  float: right;
+}
+._black {
+  color: black;
+}
 div {
   box-sizing: border-box;
 }

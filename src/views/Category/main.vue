@@ -7,7 +7,7 @@
             <van-icon name="arrow-left" class="arrow-left" @click="back"></van-icon>
           </van-col>
           <van-col span="18">
-            <div class="center">选酒</div>
+            <div class="center">购物车</div>
           </van-col>
           <van-col span="3"></van-col>
         </div>

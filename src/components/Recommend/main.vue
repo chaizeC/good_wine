@@ -9,7 +9,12 @@
     </div>
     <div class="explosive">
       <van-row>
-        <van-col span="12" v-for="(item, index) in recommandList" :key="index">
+        <van-col
+          span="12"
+          v-for="(item, index) in recommandList"
+          :key="index"
+          @click="$router.push('/detail/'+item.productId)"
+        >
           <div class="explosive_item _padding">
             <img v-lazy="item.pic||item.productPic" class="_img" />
             <div class="item_text">{{item.productName}}</div>

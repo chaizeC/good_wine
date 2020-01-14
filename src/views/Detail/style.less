@@ -14,7 +14,60 @@
 
         ._flex {
             height          : 44px;
-            background-color: #de4943;
+            background-image: linear-gradient(45deg, #e66465, #ad0c10, white);
+        }
+    }
+
+    .content {
+        background: #f3f5f6;
+
+        .headlines {
+            background-image: linear-gradient(45deg, #e66465, #ad0c10, white);
+            height          : 40px;
+            line-height     : 40px;
+            padding-left    : 15px;
+            color           : white;
+            font-family     : "幼圆";
+            font-weight     : 400;
+        }
+
+        .title {
+            background: white;
+            font-size : 15px;
+            padding   : 10px 5px;
+            position  : relative;
+
+            .logo {
+                background: url(../../common/img/listIcon.png) no-repeat -124px -29px;
+                height    : 31px;
+                width     : 76px;
+                position  : absolute;
+                transform : scale(0.6);
+                top       : 5px;
+                left      : 10px;
+            }
+
+            .text {
+                display    : inline-block;
+                text-indent: 70px;
+                line-height: 20px;
+            }
+        }
+
+        .attr {
+            font-size : 14px;
+            color     : #999;
+            margin-top: 10px;
+
+            .pd {
+                padding: 6px 15px;
+            }
+        }
+
+        .imglist {
+            img {
+                margin-top: -3px;
+            }
         }
     }
 

@@ -7,7 +7,7 @@
           <img :src="item.bigPic||item.pic" alt />
         </div>
         <div v-else>
-          <img v-lazy="item.productPic" />
+          <img v-lazy="item.productPic" @click="$router.push('/detail/'+item.productId)" />
           <div class="item_text">{{item.productName}}</div>
           <div class="item_price _red">￥{{item.productPrice.toFixed(2)}}</div>
         </div>

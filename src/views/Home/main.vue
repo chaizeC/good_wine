@@ -29,23 +29,23 @@
     <!-- 分类 -->
     <div class="_flex mt cate_wrapper" ref="cate">
       <div class="cate_item">
-        <img src="./img/baijiu.jpg" alt />
+        <img src="./img/baijiu.jpg" alt @click="$router.push('/twolevelcate/' + 1)" />
       </div>
 
       <div class="cate_item">
-        <img src="./img/putaojiu.jpg" alt />
+        <img src="./img/putaojiu.jpg" alt @click="$router.push('/twolevelcate/' + 5)" />
       </div>
 
       <div class="cate_item">
-        <img src="./img/yangjiu.jpg" alt />
+        <img src="./img/yangjiu.jpg" alt @click="$router.push('/twolevelcate/' + 2)" />
       </div>
 
       <div class="cate_item">
-        <img src="./img/pijiu.jpg" alt />
+        <img src="./img/pijiu.jpg" alt @click="$router.push('/twolevelcate/' + 6)" />
       </div>
 
       <div class="cate_item">
-        <img src="./img/laojiu.jpg" alt />
+        <img src="./img/laojiu.jpg" alt @click="$router.push('/twolevelcate/' + 4)" />
         <div class="cover_img">
           <img src="./img/laojiu.png" alt class="_img" />
         </div>

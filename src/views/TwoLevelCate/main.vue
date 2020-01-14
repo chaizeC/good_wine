@@ -21,7 +21,7 @@
     <!-- 内容 -->
     <van-sticky>
       <van-row>
-        <div class="_cate _flex">
+        <div class="_cate _flex" ref="_cate">
           <div
             class="_cate_item"
             :class="{_cate_item_active:currentIndex==1}"
@@ -73,9 +73,32 @@
     </van-row>
     <!-- 弹出层 -->
 
-    <van-popup position="right" :style="{ height: '20%' }" v-model="condition"></van-popup>
+    <van-popup position="top" :style="{ height: '30%' }" v-model="condition">
+      <div class="_padding condition">
+        <van-row>
+          <van-divider content-position="left" class="title">根据价格筛选</van-divider>
+          <van-col
+            span="12"
+            v-for="(item, index) in collapse.priceList"
+            :key="index"
+            @click="sendPrice(item.value,index)"
+          >
+            <div
+              class="_condition_item"
+              :class="{_condition_item_active:currentPrice==index}"
+            >{{item.label}}</div>
+          </van-col>
+        </van-row>
+
+        <div class="_flex">
+          <el-button type="danger" @click="filterList" circle>确定</el-button>
+          <el-button @click="currentPrice=-1;price=''" circle>重置</el-button>
+        </div>
+      </div>
+    </van-popup>
+
     <!-- 返回顶部 -->
-    <ReturnTop v-show="scrollTop" @click="showPopup">200"></ReturnTop>
+    <ReturnTop v-show="cateTop==0" @click="showPopup">200"></ReturnTop>
   </div>
 </template>
 
@@ -84,13 +107,14 @@ import Header from "../../components/Header/main";
 import ReturnTop from "../../components/ReturnTop/main";
 import { request } from "../../request/request";
 import Vue from "vue";
-import { Row, Col, Icon, Sticky, Popup, Cell } from "vant";
+import { Row, Col, Icon, Sticky, Popup, Cell, Divider } from "vant";
 Vue.use(Row)
   .use(Col)
   .use(Icon)
   .use(Sticky)
   .use(Cell)
-  .use(Popup);
+  .use(Popup)
+  .use(Divider);
 
 export default {
   data() {
@@ -100,7 +124,20 @@ export default {
       sortFlag: false,
       scrollTop: "",
       cateGoodsList: [],
-      condition: false
+      condition: false,
+      collapse: {
+        priceList: [
+          { label: "1-99元", value: "1-99" },
+          { label: "100-299元", value: "100-299" },
+          { label: "300-499元", value: "300-499" },
+          { label: "500-699元", value: "500-699" },
+          { label: "700元以上", value: "700-" }
+        ]
+      },
+      price: "",
+      temporaryList: [],
+      currentPrice: -1,
+      cateTop: ""
     };
   },
   created() {
@@ -121,7 +158,7 @@ export default {
     },
     switchIndex(index) {
       this.currentIndex = index;
-      if (index == 2) {
+      if (this.currentIndex == 2) {
         if (this.sortFlag) {
           this.cateGoodsList.sort((a, b) => {
             if (a.productPrice > b.productPrice) {
@@ -137,7 +174,7 @@ export default {
           this.cateGoodsList.sort((a, b) => a.productPrice - b.productPrice);
           this.sortFlag = true;
         }
-      } else if (index == 3) {
+      } else if (this.currentIndex == 3) {
         this.showPopup();
       } else {
         this.getTwoLevelById();
@@ -152,7 +189,7 @@ export default {
         }
       })
         .then(res => {
-          this.cateGoodsList = res.data;
+          this.cateGoodsList = this.temporaryList = res.data;
         })
         .catch(err => {
           console.log(err);
@@ -163,12 +200,37 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
+      this.cateTop = this.$refs._cate.offsetTop;
     },
     goDetail(id) {
       this.$router.push("/detail/" + id);
     },
     showPopup() {
       this.condition = true;
+    },
+    sendPrice(value, index) {
+      this.price = value;
+      this.currentPrice = index;
+    },
+    filterList() {
+      this.condition = false;
+      this.cateGoodsList = this.temporaryList;
+      var res = this.price.split("-");
+      this.cateGoodsList = this.cateGoodsList.filter(item => {
+        if (res[1]) {
+          return item.productPrice >= res[0] && item.productPrice < res[1];
+        } else {
+          return item.productPrice >= res[0];
+        }
+      });
+      if (!this.cateGoodsList.length) {
+        this.$message({
+          message: "搜索为空，换个价格试试",
+          type: "error",
+          duration: 1200,
+          offset: 2
+        });
+      }
     }
   },
   components: {
@@ -193,7 +255,7 @@ export default {
   .el-input__icon.el-icon-search.header_search {
   line-height: 25px;
 }
-#twoLevelCate_wrapper .el-input--suffix .el-input__inner {
+#twoLevelCate_wrapper .flex_box .el-input--suffix .el-input__inner {
   padding-left: 30px;
   background-color: #ececec;
   border: 0;
@@ -201,6 +263,9 @@ export default {
 #twoLevelCate_wrapper
   .el-input__suffix-inner
   .el-input__icon.el-icon-circle-close.el-input__clear {
+  line-height: 25px;
+}
+#twoLevelCate_wrapper .form .el-input__icon {
   line-height: 25px;
 }
 </style>
