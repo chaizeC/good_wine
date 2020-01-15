@@ -40,7 +40,12 @@
     <transition name="van-slide-right">
       <div v-show="searchList.length!=0" class="search_list">
         <van-list>
-          <van-cell v-for="(item,index) in searchList" :key="index" :title="item.productName" />
+          <van-cell
+            v-for="(item,index) in searchList"
+            :key="index"
+            :title="item.productName"
+            @click="$router.push('/detail/'+item.productId)"
+          />
         </van-list>
       </div>
     </transition>

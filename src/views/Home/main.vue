@@ -90,7 +90,10 @@
         </van-row>
       </div>
     </div>
+
+    <!-- 推荐 -->
     <Recommend></Recommend>
+
     <!-- 返回顶部 -->
     <ReturnTop v-show="scrollTop>cate_top"></ReturnTop>
   </div>
