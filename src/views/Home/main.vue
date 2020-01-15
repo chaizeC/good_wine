@@ -267,6 +267,6 @@ export default {
 .recom_goods .swiper-slide {
   padding: 0 5px;
   background: white;
-  border-radius: 20px;
+  border-right:2px solid #f9f9f9; 
 }
 </style>

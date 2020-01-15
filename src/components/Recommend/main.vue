@@ -2,7 +2,7 @@
 <template>
   <div id="recommend_wrapper">
     <!-- 爆款推荐 -->
-    <div class="headlines">
+    <div class="headlines" v-show="showTitle">
       <van-row>
         <van-col span="24">爆款推荐</van-col>
       </van-row>
@@ -15,8 +15,9 @@
           :key="index"
           @click="$router.push('/detail/'+item.productId)"
         >
-          <div class="explosive_item _padding">
+          <div class="explosive_item" :class="{_right:index%2,_left:!(index%2)}">
             <img v-lazy="item.pic||item.productPic" class="_img" />
+            <div class="logo"></div>
             <div class="item_text">{{item.productName}}</div>
             <div class="item_price _red">￥{{item.productPrice.toFixed(2)}}</div>
           </div>
@@ -39,6 +40,12 @@ export default {
       recommandList: [],
       temporyList: []
     };
+  },
+  props: {
+    showTitle: {
+      type: Boolean,
+      default: true
+    }
   },
   created() {
     this.getrecommandList();
@@ -84,6 +91,7 @@ export default {
 
 <style lang="less" scoped>
 #recommend_wrapper {
+  background: #f9f9f9;
   .headlines {
     background-image: linear-gradient(45deg, #e66465, #ad0c10, white);
     height: 40px;
@@ -96,9 +104,29 @@ export default {
 
   .explosive {
     .explosive_item {
-      border: 2px solid #f3f5f6;
+      background: white;
+      border-radius: 15px;
+      margin: 6px 6px 0 6px;
+      position: relative;
+      ._img {
+        border-radius: 15px;
+      }
+      .logo {
+        background: url(../../common/img/listIcon.png) no-repeat -124px -29px;
+        height: 31px;
+        width: 76px;
+        position: absolute;
+        transform: scale(0.6);
+        bottom: 49px;
+        left: -2px;
+      }
     }
-
+    ._left {
+      margin-right: 3px;
+    }
+    ._right {
+      margin-left: 3px;
+    }
     .even_number {
       margin-left: -1px;
     }
@@ -113,12 +141,14 @@ export default {
     height: 40px;
     font-weight: 400;
     line-height: 20px;
+    text-indent: 62px;
   }
 
   .item_price {
-    margin-top: 10px;
     font-size: 15px;
     font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif, Lucida Grande, Verdana;
+    padding: 10px;
   }
 }
 </style>

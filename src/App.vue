@@ -18,7 +18,7 @@ export default {
 <style>
 @import url("./common/css/reset.css");
 #app {
-  font-family: "华文细黑", "Microsoft YaHei", "黑体", sans-serif;
+  font-family: Arial, Helvetica, sans-serif, Lucida Grande, Verdana;
   padding: 44px 0 46px;
 }
 
