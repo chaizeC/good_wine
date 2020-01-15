@@ -148,10 +148,11 @@ export default {
         return totalPrice.toFixed(2);
       }
     },
-    checkedAll() {
-      if (this.checkboxGroup.length == this.cartGoodsList.length) {
-        return true;
-      } else {
+    checkedAll: {
+      get() {
+        return this.cartGoodsList.length == this.checkboxGroup.length;
+      },
+      set() {
         return false;
       }
     }

@@ -20,6 +20,7 @@ export default {
 #app {
   font-family: Arial, Helvetica, sans-serif, Lucida Grande, Verdana;
   padding: 44px 0 46px;
+  touch-action: none;
 }
 
 ._flex {
